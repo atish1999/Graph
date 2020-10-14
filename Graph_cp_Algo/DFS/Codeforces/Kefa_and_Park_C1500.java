@@ -39,7 +39,7 @@ public class Kefa_and_Park_C1500 {
 			return;
 		}
 		for (int x : adj[v]) {
-			if(x!=p) {
+			if(x!=p) {// p for parent
 				if(cat[x]==1) {
 					dfs(x,v,k+1);//if there is consecutive 1's
 				}else {
