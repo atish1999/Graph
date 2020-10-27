@@ -2,12 +2,12 @@ package Graph_basic;
 import java.util.*;
 import java.io.*;
 
-public class Calculating_subtree_size_in_o_n {
+public class BFS {
 
 	static int mod = (int) (1e9 + 7);
 	static List<Integer> adj[];
 	static boolean vis[];
-	static int subTree[];
+
 	public static void main(String[] args) throws java.lang.Exception {
 		long start = System.nanoTime(); // Program Start
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -17,8 +17,7 @@ public class Calculating_subtree_size_in_o_n {
 			int n = Integer.parseInt(st.nextToken()), m = Integer.parseInt(st.nextToken());
 			adj = new ArrayList[n + 1];
 			vis = new boolean[n + 1];
-			subTree=new int[n + 1];
-			for (int i = 0; i <= n; i++)
+			for (int i = 1; i <= n; i++)
 				adj[i] = new ArrayList<>();
 			for (int i = 0; i < m; i++) {
 				st = new StringTokenizer(br.readLine());
@@ -26,34 +25,24 @@ public class Calculating_subtree_size_in_o_n {
 				adj[u].add(v);
 				adj[v].add(u);
 			}
-			Arrays.fill(subTree, 1);
-			dfs1(1);
-			for(int i=1; i<=n; i++) System.out.print(subTree[i]+" ");
+			bfs(1);
 		}
 		long end = System.nanoTime(); // Program End
 		System.err.println("Time taken: " + (end - start) / 1000000 + " ms");
 	}
-	static int dfs(int v) {
-		vis[v] = true;
-		int curr_size=1;// when we are visiting the node
-//		current size of that node  would be always 1.
-		for (int x : adj[v]) {
-//	subtree size of node v would be equal to sum of all the subtree sizes of its
-//	children(x).
-			if(!vis[x]) {
-				curr_size+=dfs(x);
-			}
-		}
-		subTree[v]=curr_size;
-		return curr_size;
-	}
-	static void dfs1(int v) {
-		vis[v]=true;
-		subTree[v]=1;
-		for(int x: adj[v]) {
-			if(!vis[x]) {
-				dfs(x);
-				subTree[v]+=subTree[x];
+
+	static void bfs(int s) {// s=source node
+		Queue<Integer> q=new LinkedList<>();
+		q.add(s);
+		vis[s]=true;
+		while(!q.isEmpty()) {
+			int c=q.poll();
+			System.out.print(c+" ");
+			for(int x: adj[c]) {
+				if(!vis[x]) {
+					q.add(x);
+					vis[x]=true;
+				}
 			}
 		}
 	}
