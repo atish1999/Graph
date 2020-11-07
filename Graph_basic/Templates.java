@@ -2,7 +2,7 @@ package Graph_basic;
 import java.util.*;
 import java.io.*;
 
-public class Dfs {
+public class Dfs_Templates {
 
 	static int mod = (int) (1e9 + 7);
 	static List<Integer> adj[];
