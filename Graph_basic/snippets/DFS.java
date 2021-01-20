@@ -2,7 +2,11 @@ package Graph_basic.snippets;
 import java.util.*;
 import java.io.*;
 
+<<<<<<< HEAD:Graph_basic/snippets/DFS.java
 public class DFS{
+=======
+public class Dfs_Templates {
+>>>>>>> c4a02a5042ecdee3d4cafa65353381edef7fc545:Graph_basic/Templates.java
 
 	static int mod = (int) (1e9 + 7);
 	static List<Integer> adj[];
