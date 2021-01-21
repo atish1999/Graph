@@ -48,9 +48,29 @@ public class Dsu implements Runnable {
 			}
 			return str;
 		}
+		int[] nextIntArray(int size) {
+			int[] arr = new int[size];
+			for (int i = 0; i < size; ++i)
+				arr[i] = nextInt();
+			return arr;
+		}
+
+		long[] nextLongArray(int size) {
+			long[] arr = new long[size];
+			for (int i = 0; i < size; ++i)
+				arr[i] = nextLong();
+			return arr;
+		}
+
+		double[] nextDoubleArray(int size) {
+			double[] arr = new double[size];
+			for (int i = 0; i < size; ++i)
+				arr[i] = nextDouble();
+			return arr;
+		}
 	}
 
-	static int mod = (int) (1e5 + 1);
+	static int mod = (int) (1e9 + 7);
 	static int par[],Rank[];
 
 	public static void main(String[] args) throws java.lang.Exception {
@@ -81,6 +101,7 @@ public class Dsu implements Runnable {
 	public void run() {
 		long start = System.nanoTime(); // Program Start
 		FastReader fr = new FastReader();
+		PrintWriter out=new PrintWriter(System.out, true);
 		boolean testcase = true;
 		int t = testcase ? fr.nextInt() : 1;
 		while (t-- > 0) {

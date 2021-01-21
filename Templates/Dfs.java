@@ -44,9 +44,29 @@ public class Dfs implements Runnable {
 			}
 			return str;
 		}
+		int[] nextIntArray(int size) {
+			int[] arr = new int[size];
+			for (int i = 0; i < size; ++i)
+				arr[i] = nextInt();
+			return arr;
+		}
+
+		long[] nextLongArray(int size) {
+			long[] arr = new long[size];
+			for (int i = 0; i < size; ++i)
+				arr[i] = nextLong();
+			return arr;
+		}
+
+		double[] nextDoubleArray(int size) {
+			double[] arr = new double[size];
+			for (int i = 0; i < size; ++i)
+				arr[i] = nextDouble();
+			return arr;
+		}
 	}
 
-	static int mod = (int) (1e5 + 1);
+	static int mod = (int) (1e9 + 7);
 	static List<Integer> adj[];
 	static boolean vis[];
 
