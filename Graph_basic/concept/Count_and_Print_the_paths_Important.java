@@ -1,9 +1,9 @@
-package Graph_GFG.Easy;
+package Graph_basic.concept;
 
 import java.util.*;
 import java.io.*;
 
-public class Count_the_paths implements Runnable {
+public class Count_and_Print_the_paths_Important implements Runnable {
 
 	static class FastReader {
 		BufferedReader br;
@@ -74,7 +74,7 @@ public class Count_the_paths implements Runnable {
 	static List<Integer> path;
 
 	public static void main(String[] args) throws java.lang.Exception {
-		new Thread(null, new Count_the_paths(), "Main", 1 << 26).start();
+		new Thread(null, new Count_and_Print_the_paths_Important(), "Main", 1 << 26).start();
 	}
 
 //	dfs approach

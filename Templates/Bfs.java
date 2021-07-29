@@ -1,4 +1,5 @@
 package Templates;
+
 /*
 "									जय श्री कृष्णा"
 */
@@ -47,6 +48,7 @@ public class Bfs implements Runnable {
 			}
 			return str;
 		}
+
 		int[] nextIntArray(int size) {
 			int[] arr = new int[size];
 			for (int i = 0; i < size; ++i)
@@ -78,14 +80,14 @@ public class Bfs implements Runnable {
 	}
 
 	static void bfs(int v) {
-		Queue<Integer> q=new LinkedList<>();
+		Queue<Integer> q = new ArrayDeque<>();
 		q.add(v);
-		vis[v]=true;
-		while(!q.isEmpty()) {
-			int cur=q.poll();
-			for(int x: adj[cur]) {
-				if(!vis[x]) {
-					vis[x]=true;
+		vis[v] = true;
+		while (!q.isEmpty()) {
+			int cur = q.poll();
+			for (int x : adj[cur]) {
+				if (!vis[x]) {
+					vis[x] = true;
 					q.add(x);
 				}
 			}
@@ -96,7 +98,7 @@ public class Bfs implements Runnable {
 	public void run() {
 		long start = System.nanoTime(); // Program Start
 		FastReader fr = new FastReader();
-		PrintWriter out=new PrintWriter(System.out, true);
+		PrintWriter out = new PrintWriter(System.out, true);
 		boolean testcase = true;
 		int t = testcase ? fr.nextInt() : 1;
 		while (t-- > 0) {
@@ -116,4 +118,3 @@ public class Bfs implements Runnable {
 		System.err.println("Time taken: " + (end - start) / 1000000 + " ms");
 	}
 }
-
