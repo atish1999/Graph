@@ -7,7 +7,7 @@ public class Owl_Fight_using_graph implements Runnable {
 	static class FastReader {
 		BufferedReader br;
 		StringTokenizer st;
-
+ 
 		public FastReader() {
 			br = new BufferedReader(new InputStreamReader(System.in));
 		}
