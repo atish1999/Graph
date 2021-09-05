@@ -1,4 +1,4 @@
-package Graph;
+package Graph_cp_Algo.DFS.Codeforces;
 /*
 								"जय श्री कृष्णा"
 */
